@@ -1,0 +1,20 @@
+<div id='kodelisensi'>
+        3788397231272061490
+    </div>
+
+    <script>
+        
+        function encryptLicenseValue(value) {
+            // Contoh sederhana: mengubah setiap karakter menjadi karakter ASCII+22
+            let encryptedValue = '';
+            for (let i = 0; i < value.length; i++) {
+                encryptedValue += String.fromCharCode(value.charCodeAt(i) + 22);
+            }
+            return encryptedValue;
+        }
+
+        const kodelisensiDiv = document.getElementById('kodelisensi');
+        const nilaiLisensi = kodelisensiDiv.innerText.trim();
+        const encryptedNilaiLisensi = encryptLicenseValue(nilaiLisensi);
+        console.log('Nilai Lisensi Terenkripsi:', encryptedNilaiLisensi);
+    </script>
