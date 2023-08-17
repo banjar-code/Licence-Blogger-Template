@@ -1,0 +1,20 @@
+   <div id='kodelisensi'>
+        IMNNIOMHIGHMHFLGJOF
+    </div>
+
+    <script>
+        function decryptLicenseValue(encryptedValue) {
+            let decryptedValue = '';
+            for (let i = 0; i < encryptedValue.length; i++) {
+                decryptedValue += String.fromCharCode(encryptedValue.charCodeAt(i) - 22);
+            }
+            return decryptedValue;
+        }
+
+        const kodelisensiDiv = document.getElementById('kodelisensi');
+        const encryptedNilaiLisensi = kodelisensiDiv.innerText.trim();
+        
+        const decryptedNilaiLisensi = decryptLicenseValue(encryptedNilaiLisensi);
+       
+        console.log('Nilai Lisensi Terdekripsi:', decryptedNilaiLisensi);
+    </script>
