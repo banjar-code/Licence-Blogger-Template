@@ -8,6 +8,6 @@ keterangan:
 4. jika true maka licence berhasil, jika false licence gagal.
 
 catatan:
-1.licence tidak akan berhasil jika langsung memasukan blogid.
-2.lisence hanya akan berhasil jika blogid di encripted terlebih dahulu dengan script encripted khusus yang telah disediakan pada repository ini.
+1. licence tidak akan berhasil jika langsung memasukan blogid.
+2. lisence hanya akan berhasil jika blogid di encripted terlebih dahulu dengan script encripted khusus yang telah disediakan pada repository ini.
 
