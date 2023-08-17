@@ -1,0 +1,21 @@
+<div id='kodelisensi'>
+    NILAI_LISENSI_YANG_DIHARAPKAN 
+ </div>
+
+<meta expr:content='data:blog.blogId' itemprop='blogId'/>
+<script>
+    //<![CDATA[
+   var kodelisensiElement = document.getElementById("kodelisensi");
+   var kodelisensiValue = kodelisensiElement.textContent.trim();
+   var blogIdMeta = document.querySelector('meta[itemprop="blogId"][content]');
+   if (blogIdMeta) {
+       var blogIdValue = blogIdMeta.getAttribute('content');
+       if (kodelisensiValue === blogIdValue) {
+         validLicense = true;
+       } else {
+         validLicense = false;
+         window.location.href = "https://www.arifnoerwahidin.my.id";
+       }
+   } 
+   //]]>
+</script>
