@@ -17,14 +17,11 @@
         const encryptedNilaiLisensi = kodelisensiDiv.innerText.trim();
         
         const decryptedNilaiLisensi = decryptLicenseValue(encryptedNilaiLisensi);
-       
-   var kodelisensiElement = document.getElementById("kodelisensi");
-   var kodelisensiValue = kodelisensiElement.textContent.trim();
+
    var blogIdMeta = document.querySelector('meta[itemprop="blogId"][content]');
    if (blogIdMeta) {
        var blogIdValue = blogIdMeta.getAttribute('content');
-		const decryptedNilaiLisensi = kodelisensiValue; 
-       if (kodelisensiValue === blogIdValue) {
+       if (decryptedNilaiLisensi === blogIdValue) {
          validLicense = true;
        } else {
          validLicense = false;
