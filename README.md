@@ -1,5 +1,6 @@
 # Licence-Blogger-Template
 Kode Licence template blogger tanpa enkirpsi, diperuntukan untuk pembelajaran saja.
+
 keterangan:
 1. Licence template blogger menggunakan metode blogid yang di encripsi terlebih dahulu.
 2. pada bagian js menggunakan algoritma decripted.
