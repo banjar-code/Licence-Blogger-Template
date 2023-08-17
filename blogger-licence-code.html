@@ -1,15 +1,29 @@
 <div id='kodelisensi'>
-    NILAI_LISENSI_YANG_DIHARAPKAN 
+    NLINONFKJFGHGFMGFHH 
  </div>
-
+ 
 <meta expr:content='data:blog.blogId' itemprop='blogId'/>
 <script>
     //<![CDATA[
+   function decryptLicenseValue(encryptedValue) {
+            let decryptedValue = '';
+            for (let i = 0; i < encryptedValue.length; i++) {
+                decryptedValue += String.fromCharCode(encryptedValue.charCodeAt(i) - 22);
+            }
+            return decryptedValue;
+        }
+
+        const kodelisensiDiv = document.getElementById('kodelisensi');
+        const encryptedNilaiLisensi = kodelisensiDiv.innerText.trim();
+        
+        const decryptedNilaiLisensi = decryptLicenseValue(encryptedNilaiLisensi);
+       
    var kodelisensiElement = document.getElementById("kodelisensi");
    var kodelisensiValue = kodelisensiElement.textContent.trim();
    var blogIdMeta = document.querySelector('meta[itemprop="blogId"][content]');
    if (blogIdMeta) {
        var blogIdValue = blogIdMeta.getAttribute('content');
+		const decryptedNilaiLisensi = kodelisensiValue; 
        if (kodelisensiValue === blogIdValue) {
          validLicense = true;
        } else {
