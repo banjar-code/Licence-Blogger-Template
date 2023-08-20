@@ -1,4 +1,4 @@
 # These are supported funding model platforms
 
-github: [panduan-code, PanduanCode]
+github: ['panduan-code', 'PanduanCode']
 custom: ['https://www.paypal.me/panduancode']
