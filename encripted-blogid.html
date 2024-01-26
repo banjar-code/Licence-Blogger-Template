@@ -1,7 +1,7 @@
 <div id='kodelisensi'>
         8638980540121071022
     </div>
-
+<p></p>
     <script>
         
         function encryptLicenseValue(value) {
@@ -17,4 +17,5 @@
         const nilaiLisensi = kodelisensiDiv.innerText.trim();
         const encryptedNilaiLisensi = encryptLicenseValue(nilaiLisensi);
         console.log('Nilai Lisensi Terenkripsi:', encryptedNilaiLisensi);
+        document.querySelector('p').innerText = 'Nilai Lisensi Terenkripsi: ' + encryptedNilaiLisensi;
     </script>
