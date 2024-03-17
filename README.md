@@ -1,7 +1,7 @@
 # Licence-Blogger-Template
 Kode Licence template blogger tanpa enkirpsi, diperuntukan untuk pembelajaran saja.
 
-Menggunakan algoritma kriptografi modern yaitu Advanced Encryption Standard (AES). AES adalah salah satu algoritma kriptografi simetris yang paling umum digunakan dan dianggap aman.
+Menggunakan algoritma kriptografi modern yaitu Advanced Encryption Standard (AES). AES adalah salah satu algoritma kriptografi simetris yang paling umum digunakan dan dianggap aman. 
 
 nilai yang dihasilkan dari proses enripsi akan selalu berbeda walaupun nilai yang di encripsi tetap sama, tetapi ketika proses dekripsi berjalan apapun nilai yang dihasilkan dari proses enripsi dengan AES tersebut akan bisa di dekripsi kembali menjadi nilai semua sebelum di encripsi.
 
@@ -14,7 +14,7 @@ kedua nilai encripsi tersebut jika didekripsi kembali menggunakan source code ya
 
 keterangan:
 1. Licence template blogger menggunakan metode blogid yang di encripsi terlebih dahulu.
-2. pada bagian js menggunakan algoritma decripted.
+2. pada bagian js menggunakan algoritma AES dan salt dengan nilai tetap sebagai kunci tambahan.
 3. hasil decripted dicocokkan dengan blogid, jika sama maka true, jika berbeda maka false.
 4. jika true maka licence berhasil, jika false licence gagal.
 
