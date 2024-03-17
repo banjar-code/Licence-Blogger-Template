@@ -7,6 +7,7 @@ nilai yang dihasilkan dari proses enripsi akan selalu berbeda walaupun nilai yan
 
 sebagai contoh nilai awal adalah 8638980540121071022
 dan setelah dienkripsi pertama kali menjadi U2FsdGVkX1/rmcH2t01RzpXXG4vt2/aKC1QYzpa82dyITb/+ksBDQlhtBfXykLxN
+
 lalu encripsi kedua menjadi U2FsdGVkX18QlkQ95H3L1655Zf4YnAKEfyDk4zvhFHD3F4nQxyTtEBK4TzzityE4
 
 kedua nilai encripsi tersebut jika didekripsi kembali menggunakan source code yang sudah kami buat akan kembali menjadi nilai awal yaitu 8638980540121071022
