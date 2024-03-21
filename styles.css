@@ -1,0 +1,41 @@
+/* styles.css */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  background-color: #343a40;
+  padding-top: 3rem;
+  color: white;
+}
+
+.sidebar-header {
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.main-content {
+  margin-left: 250px; /* Adjust according to sidebar width */
+  padding: 20px;
+}
+
+.nav-link {
+  color: white;
+}
+
+.nav-link i {
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: relative;
+    padding-top: 1rem;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+}
