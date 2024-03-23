@@ -4,53 +4,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Enkripsi dan Dekripsi Nilai Lisensi</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<meta expr:content='data:blog.blogId' itemprop='blogId'/>
 </head>
 <body>
 <div id="kodelisensi">
-    U2FsdGVkX1/rmcH2t01RzpXXG4vt2/aKC1QYzpa82dyITb/+ksBDQlhtBfXykLxN
+   KJLGOHHGIKJJJJILHMF
 </div>
 <p></p>
 <script>
     //<![CDATA[
-// Fungsi untuk mengenkripsi data dengan AES
-function encryptAES(data, key) {
-    return CryptoJS.AES.encrypt(data.toString(), key).toString();
+
+function decryptLicenseValue(encryptedValue) {
+    let decryptedValue = '';
+    for (let i = 0; i < encryptedValue.length; i++) {
+        decryptedValue += String.fromCharCode(encryptedValue.charCodeAt(i) - 22);
+    }
+    return decryptedValue;
 }
 
-// Fungsi untuk mendekripsi data dengan AES
-function decryptAES(encryptedData, key) {
-    const bytes  = CryptoJS.AES.decrypt(encryptedData, key);
-    return bytes.toString(CryptoJS.enc.Utf8);
+const kodelisensiDiv = document.getElementById('kodelisensi');
+
+if (kodelisensiDiv === null) {
+    window.location.href = "https://www.arifnoerwahidin.my.id";
+} else {
+    const encryptedNilaiLisensi = kodelisensiDiv.innerText.trim();
+    const decryptedNilaiLisensi = decryptLicenseValue(encryptedNilaiLisensi);
+
+    var blogIdMeta = document.querySelector('meta[itemprop="blogId"][content]');
+    if (blogIdMeta) {
+        var blogIdValue = blogIdMeta.getAttribute('content');
+        if (decryptedNilaiLisensi === blogIdValue) {
+            validLicense = true;
+        } else {
+            validLicense = false;
+            window.location.href = "https://www.arifnoerwahidin.my.id";
+        }
+    } 
 }
-
-// Fungsi untuk mengenkripsi lisensi
-function encryptLicenseValue(value, key) {
-    return encryptAES(value, key);
-}
-
-// Fungsi untuk mendekripsi lisensi
-function decryptLicenseValue(encryptedValue, key) {
-    return decryptAES(encryptedValue, key);
-}
-
-// Mendapatkan nilai enkripsi dari div
-const encryptedNilaiLisensi = document.getElementById('kodelisensi').innerText.trim();
-// Kunci rahasia (harus disimpan dengan aman)
-const secretKey = "arifnoerwahidinsukses";
-
-// Dekripsi nilai lisensi
-const decryptedNilaiLisensi = decryptLicenseValue(encryptedNilaiLisensi, secretKey);
-  var blogIdMeta = document.querySelector('meta[itemprop="blogId"][content]');
-   if (blogIdMeta) {
-       var blogIdValue = blogIdMeta.getAttribute('content');
-       if (decryptedNilaiLisensi === blogIdValue) {
-         validLicense = true;
-       } else {
-         validLicense = false;
-         window.location.href = "https://www.arifnoerwahidin.my.id";
-       }
-   } 
 //]]>
 </script>
 </body>
