@@ -1,51 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Enkripsi dan Dekripsi Nilai Lisensi</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-</head>
-<body>
 <div id="kodelisensi">
-    8638980540121071022
+     8638980540121071022
 </div>
+
 <p></p>
 <script>
-// Fungsi untuk mengenkripsi data dengan AES
-function encryptAES(data, key) {
-    return CryptoJS.AES.encrypt(data.toString(), key).toString();
-}
+    function encryptLicenseValue(value) {
+        let encryptedValue = '';
+        for (let i = 0; i < value.length; i++) {
+            encryptedValue += String.fromCharCode(value.charCodeAt(i) + 22);
+        }
+        return encryptedValue;
+    }
 
-// Fungsi untuk mendekripsi data dengan AES
-function decryptAES(encryptedData, key) {
-    const bytes  = CryptoJS.AES.decrypt(encryptedData, key);
-    return bytes.toString(CryptoJS.enc.Utf8);
-}
+    function shiftString(str, num) {
+        let shiftedStr = '';
+        for (let i = 0; i < str.length; i++) {
+            shiftedStr += String.fromCharCode(str.charCodeAt(i) + num);
+        }
+        return shiftedStr;
+    }
 
-// Fungsi untuk mengenkripsi lisensi
-function encryptLicenseValue(value, key) {
-    return encryptAES(value, key);
-}
+    const kodelisensiDiv = document.getElementById('kodelisensi');
+    let nilaiLisensi = kodelisensiDiv.innerText.trim();
 
-// Fungsi untuk mendekripsi lisensi
-function decryptLicenseValue(encryptedValue, key) {
-    return decryptAES(encryptedValue, key);
-}
+    const shiftedAdelia = shiftString('08112002', 3);
+    nilaiLisensi = nilaiLisensi.slice(0, nilaiLisensi.length / 2) + shiftedAdelia + nilaiLisensi.slice(nilaiLisensi.length / 2);
 
-// Nilai lisensi
-const nilaiLisensi = document.getElementById('kodelisensi').innerText.trim();
-// Kunci rahasia (harus disimpan dengan aman)
-const secretKey = "arifnoerwahidinsukses";
-
-// Enkripsi nilai lisensi
-const encryptedNilaiLisensi = encryptLicenseValue(nilaiLisensi, secretKey);
-console.log('Nilai Lisensi Terenkripsi:', encryptedNilaiLisensi);
-document.querySelector('p').innerText = 'Nilai Lisensi Terenkripsi: ' + encryptedNilaiLisensi;
-
-// Dekripsi nilai lisensi (contoh)
-const decryptedNilaiLisensi = decryptLicenseValue(encryptedNilaiLisensi, secretKey);
-console.log('Nilai Lisensi Terdekripsi:', decryptedNilaiLisensi);
+    const encryptedNilaiLisensi = encryptLicenseValue(nilaiLisensi);
+    console.log('Nilai Lisensi Terenkripsi:', encryptedNilaiLisensi);
+    document.querySelector('p').innerText = 'Nilai Lisensi Terenkripsi: ' + encryptedNilaiLisensi;
 </script>
-</body>
-</html>
